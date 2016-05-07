@@ -1,10 +1,35 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+	<title>SignUp page</title>
+
+
+	<link rel="stylesheet" href="{% static 'css/normalise.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 </head>
 <body>
-
+	<section class="loginform cf">
+		<form name="login" action="profile/" method="post" accept-charset="utf-8">{% csrf_token %}
+			<ul>
+				<li>
+					<label for="username">Username</label>
+					<input type="text" name="username" placeholder="Choose an username" required>
+				</li>
+				<li>
+					<label for="password">Password</label>
+					<input type="password" name="password" placeholder="password" required></li>
+				<li>
+					<input type="submit" value="Login">
+				</li>
+			</ul>
+		</form>
+		<form action="{% url 'sign' %}" method="post">{% csrf_token %}
+			<button type="submit" method="post">Don't have an account? Sign up!</button>
+		</form>
+	</section>
 </body>
 </html>

@@ -1,5 +1,5 @@
 html {
-	background: url('../img/wood_pattern.png');
+	background: url('wood_pattern.png');
 	font-size: 10pt;
 }
 label {

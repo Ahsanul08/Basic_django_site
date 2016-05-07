@@ -4,6 +4,7 @@ from validation_app import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^sign_up/$', views.show_signup_page),
-    url(r'^profile/$', views.)
+    url(r'^signup/$', views.show_signup_page, name="sign"),
+    url(r'^log_in/$', views.show_login_page),
+    url(r'^profile/$', views.do_signup, name="profile")
 ]
