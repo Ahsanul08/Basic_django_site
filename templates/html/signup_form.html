@@ -14,7 +14,7 @@
 
 <body>
 	<section class="loginform cf">
-		<form name="login" action="{% url 'profile' %}" method="post" accept-charset="utf-8">{% csrf_token %}
+		<form name="login" action="{% url 'sign_up_form' %}" method="post" accept-charset="utf-8">{% csrf_token %}
 			<ul>
 				<li>
 					<label for="username">Username</label>
