@@ -1,0 +1,27 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+	<link rel="stylesheet" href="{% static 'css/normalise.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <section class="loginform cf">
+		<form name="login" action="{% url 'ban_url' %}" method="post" accept-charset="utf-8">{% csrf_token %}
+            {% block content %}{% endblock %}
+            <input type="submit" value="Ban them">
+
+		</form>
+	</section>
+</body>
+</html>
+
+
+
+
+

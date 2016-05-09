@@ -1,11 +1,25 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Your profile</title>
+	<link rel="stylesheet" href="{% static 'css/normalise.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
+
 <body>
-    <h1> Congratulations! {{ user_name }} </h1>
-    <p>You have an account now. </p>
+    <section class="loginform cf">
+		<form name="login" action="{% url 'ban_url' %}" method="post" accept-charset="utf-8">{% csrf_token %}
+           <input type="checkbox" name="checks[]" value="stickermarket/"> StickerMarket<br>
+           <input type="checkbox" name="checks[]" value="official/desktop/" > Official Desktop<br>
+           <input type="checkbox" name="checks[]" value="emoticon/"> Emoticon<br>
+           <input type="checkbox" name="checks[]" value="ringLightEmoticon/"> Ring Light Emoticon  <br>
+           <input type="checkbox" name="checks[]" value="chatbg/"> Ring Light Emoticon  <br>
+           <input type="submit" value="Ban them">
+		</form>
+	</section>
 </body>
 </html>
